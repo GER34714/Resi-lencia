@@ -1,0 +1,914 @@
+<!-- PARTE 1/2 -->
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <title>Resi.Lencia | Arte en resina personalizado (DM Instagram)</title>
+  <meta name="description" content="Arte en resina hecho a mano. Llaveros, ceniceros, cuadros y adornos. Pedidos por DM en Instagram: @resi_lencia2026." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Resi.Lencia | Arte en resina personalizado" />
+  <meta property="og:description" content="Hecho a mano con actitud. Llaveros, ceniceros, cuadros y adornos. Pedidos por DM en Instagram: @resi_lencia2026." />
+  <meta property="og:image" content="https://iili.io/f8Vixja.md.jpg" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Resi.Lencia | Arte en resina personalizado" />
+  <meta name="twitter:description" content="Llaveros, ceniceros, cuadros y adornos. Pedidos por DM en Instagram: @resi_lencia2026." />
+  <meta name="twitter:image" content="https://iili.io/f8Vixja.md.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --bg2: #f6f7fb;
+      --text: #0b0f19;
+      --muted: #4b5563;
+      --line: rgba(11, 15, 25, .12);
+      --shadow: 0 18px 45px rgba(11,15,25,.10);
+      --shadow2: 0 10px 24px rgba(11,15,25,.10);
+      --radius: 18px;
+
+      --accent: #00d4ff;  /* cian */
+      --accent2: #7c3aed; /* violeta */
+      --accent3: #22c55e; /* verde */
+
+      --btn: #0b0f19;
+      --btnText: #ffffff;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 700px at 20% -10%, rgba(0,212,255,.10), transparent 55%),
+                  radial-gradient(900px 650px at 95% 15%, rgba(124,58,237,.10), transparent 55%),
+                  radial-gradient(900px 650px at 40% 115%, rgba(34,197,94,.10), transparent 55%),
+                  linear-gradient(180deg, #ffffff 0%, #fbfbfd 40%, #ffffff 100%);
+      padding-bottom: 96px; /* para que el botón flotante no tape el footer */
+    }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(135deg,
+          rgba(11, 15, 25, .035) 0px,
+          rgba(11, 15, 25, .035) 1px,
+          transparent 1px,
+          transparent 12px);
+      opacity: .35;
+      mix-blend-mode: multiply;
+      z-index: 0;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { position: relative; z-index: 1; }
+
+    .container {
+      width: min(1100px, 92vw);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      user-select: none;
+    }
+
+    .brand .name {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: .8px;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .brand .tag {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.65);
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.70);
+      font-weight: 700;
+      font-size: 13px;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+    .pill:hover { transform: translateY(-1px); box-shadow: var(--shadow2); border-color: rgba(11,15,25,.22); }
+
+    .hero {
+      padding: 28px 0 18px;
+    }
+
+    .heroGrid {
+      display: grid;
+      grid-template-columns: 1.35fr .85fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .heroCard, .heroSide {
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .heroCard {
+      padding: 18px 18px 16px;
+    }
+
+    .hBadgeRow {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(11,15,25,.14);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.70));
+      font-weight: 800;
+      font-size: 12px;
+      color: #111827;
+    }
+
+    .dot {
+      width: 10px; height: 10px; border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0,212,255,.18);
+    }
+    .dot.v { background: var(--accent2); box-shadow: 0 0 0 3px rgba(124,58,237,.18); }
+    .dot.g { background: var(--accent3); box-shadow: 0 0 0 3px rgba(34,197,94,.18); }
+
+    h1 {
+      margin: 8px 0 10px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(38px, 4.6vw, 64px);
+      line-height: .98;
+      letter-spacing: .8px;
+    }
+
+    .sub {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+      max-width: 60ch;
+    }
+
+    .ctaRow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(11,15,25,.12);
+      font-weight: 900;
+      letter-spacing: .2px;
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease, filter .15s ease, background .15s ease;
+      user-select: none;
+    }
+
+    .btnPrimary {
+      background: var(--btn);
+      color: var(--btnText);
+      border-color: rgba(11,15,25,.22);
+      box-shadow: 0 18px 40px rgba(11,15,25,.18);
+    }
+    .btnPrimary:hover { transform: translateY(-1px); filter: brightness(1.03); }
+    .btnGhost {
+      background: rgba(255,255,255,.86);
+      color: var(--text);
+    }
+    .btnGhost:hover { transform: translateY(-1px); box-shadow: var(--shadow2); }
+
+    .heroSide {
+      padding: 0;
+      display: grid;
+      grid-template-rows: 1fr;
+    }
+
+    .sideImg {
+      position: relative;
+      min-height: 270px;
+      background: #0b0f19;
+    }
+
+    .sideImg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.08) saturate(1.05);
+      transform: scale(1.02);
+    }
+
+    .sideOverlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(11,15,25,.05) 0%, rgba(11,15,25,.38) 70%, rgba(11,15,25,.55) 100%),
+        radial-gradient(450px 220px at 20% 20%, rgba(0,212,255,.25), transparent 55%),
+        radial-gradient(450px 220px at 80% 30%, rgba(124,58,237,.20), transparent 55%);
+    }
+
+    .sideCaption {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      color: white;
+      display: grid;
+      gap: 8px;
+    }
+
+    .sideCaption .big {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: .8px;
+      font-size: 34px;
+      line-height: 1;
+      text-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    .sideCaption .mini {
+      font-size: 13px;
+      opacity: .92;
+      line-height: 1.4;
+    }
+
+    section {
+      padding: 18px 0;
+    }
+
+    .sectionHead {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .h2 {
+      margin: 0;
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: .8px;
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .hint {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+      overflow: hidden;
+      position: relative;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(11,15,25,.22);
+      box-shadow: 0 20px 44px rgba(11,15,25,.14);
+    }
+
+    .cardTop {
+      position: relative;
+      height: 190px;
+      background: #0b0f19;
+    }
+    .cardTop img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.08) saturate(1.08);
+    }
+    .cardTop::after{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(11,15,25,.10) 0%, rgba(11,15,25,.45) 65%, rgba(11,15,25,.62) 100%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,.0) 0px, rgba(255,255,255,.0) 10px, rgba(255,255,255,.06) 10px, rgba(255,255,255,.06) 11px);
+    }
+
+    .cardTitle {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: #fff;
+    }
+    .cardTitle b {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 1px;
+      font-size: 34px;
+      line-height: 1;
+      text-shadow: 0 14px 35px rgba(0,0,0,.35);
+    }
+    .chip {
+      font-size: 12px;
+      font-weight: 900;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(0,0,0,.18);
+      backdrop-filter: blur(6px);
+      white-space: nowrap;
+    }
+
+    .cardBody {
+      padding: 12px 14px 14px;
+      display: grid;
+      gap: 10px;
+    }
+    .cardBody p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    .btnRow {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .btnSmall {
+      padding: 12px 12px;
+      border-radius: 14px;
+      font-size: 13px;
+    }
+
+    .btnCopy {
+      background: rgba(255,255,255,.86);
+      border: 1px solid rgba(11,15,25,.18);
+    }
+    .btnCopy:hover { transform: translateY(-1px); box-shadow: var(--shadow2); }
+
+    .btnIG {
+      background: linear-gradient(135deg, rgba(0,212,255,.12), rgba(124,58,237,.12));
+      border: 1px solid rgba(11,15,25,.18);
+    }
+    .btnIG:hover { transform: translateY(-1px); box-shadow: var(--shadow2); }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 10px;
+    }
+
+    .gItem {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #0b0f19;
+      box-shadow: var(--shadow2);
+      position: relative;
+      min-height: 120px;
+    }
+    .gItem img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.06) saturate(1.06);
+      transform: scale(1.01);
+      transition: transform .22s ease, filter .22s ease;
+    }
+    .gItem:hover img { transform: scale(1.05); filter: contrast(1.12) saturate(1.12); }
+
+    .span6 { grid-column: span 6; }
+    .span4 { grid-column: span 4; }
+    .span3 { grid-column: span 3; }
+
+    /* Steps */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .step {
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+      padding: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+    .step::before{
+      content:"";
+      position:absolute;
+      inset: -40px -40px auto auto;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle at 30% 30%, rgba(0,212,255,.22), transparent 60%),
+                  radial-gradient(circle at 60% 60%, rgba(124,58,237,.18), transparent 62%);
+      transform: rotate(15deg);
+      opacity: .8;
+      pointer-events:none;
+    }
+    .stepNum{
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: var(--text);
+      color: #fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 900;
+      margin-bottom: 10px;
+      box-shadow: 0 16px 35px rgba(11,15,25,.18);
+    }
+    .step h3{
+      margin: 0 0 6px;
+      font-weight: 900;
+      letter-spacing: .2px;
+      font-size: 16px;
+    }
+    .step p{
+      margin: 0;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 13.5px;
+      line-height: 1.45;
+    }
+
+    /* FAQ */
+    .faq {
+      display: grid;
+      gap: 10px;
+    }
+    details {
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+      padding: 12px 14px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 900;
+      letter-spacing: .2px;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    details p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    /* CTA band */
+    .ctaBand {
+      background:
+        linear-gradient(135deg, rgba(0,212,255,.13), rgba(124,58,237,.10)),
+        radial-gradient(900px 450px at 10% 10%, rgba(34,197,94,.12), transparent 55%),
+        rgba(255,255,255,.90);
+      border: 1px solid rgba(11,15,25,.14);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+      align-items: center;
+    }
+    .ctaBand h3{
+      margin: 0 0 6px;
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: .9px;
+      font-size: 34px;
+      line-height: 1;
+    }
+    .ctaBand p{
+      margin: 0;
+      color: var(--muted);
+      font-weight: 600;
+      line-height: 1.5;
+      font-size: 13.5px;
+    }
+    .ctaBand .ctaRow { justify-content: flex-end; margin: 0; }
+
+    /* Footer */
+    footer{
+      padding: 18px 0 26px;
+      border-top: 1px solid var(--line);
+      margin-top: 12px;
+    }
+    .foot {
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .foot a{
+      color: var(--text);
+      font-weight: 900;
+      border-bottom: 1px dashed rgba(11,15,25,.35);
+    }
+    .foot a:hover { border-bottom-style: solid; }
+
+    /* Floating IG button */
+    .floatIG {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(11,15,25,.18);
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 42px rgba(11,15,25,.16);
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+      user-select: none;
+    }
+    .floatIG:hover { transform: translateY(-1px); }
+    .igIcon{
+      width: 22px; height: 22px;
+      border-radius: 7px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), transparent 45%),
+        linear-gradient(135deg, rgba(0,212,255,.75), rgba(124,58,237,.75));
+      position: relative;
+      box-shadow: 0 0 0 3px rgba(0,212,255,.12);
+    }
+    .igIcon::after{
+      content:"";
+      position:absolute;
+      inset: 5px;
+      border-radius: 6px;
+      border: 2px solid rgba(255,255,255,.82);
+      opacity: .95;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      z-index: 60;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(11,15,25,.18);
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 42px rgba(11,15,25,.18);
+      font-weight: 800;
+      font-size: 13px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-6px);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .heroGrid { grid-template-columns: 1fr; }
+      .sideImg { min-height: 240px; }
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: 1fr; }
+      .ctaBand { grid-template-columns: 1fr; }
+      .ctaBand .ctaRow { justify-content: flex-start; }
+      .span6 { grid-column: span 12; }
+      .span4 { grid-column: span 6; }
+      .span3 { grid-column: span 6; }
+    }
+    @media (max-width: 520px){
+      .brand .tag { display:none; }
+      .cards { grid-template-columns: 1fr; }
+      .btnRow { grid-template-columns: 1fr; }
+      .cardTop { height: 200px; }
+      .floatIG { right: 12px; bottom: 12px; }
+      body { padding-bottom: 106px; }
+    }
+
+    .btn:focus, .pill:focus, summary:focus, .floatIG:focus {
+      outline: 3px solid rgba(0,212,255,.28);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <header>
+      <div class="container">
+        <div class="nav">
+          <div class="brand">
+            <div class="name">Resi.Lencia</div>
+            <div class="tag">Arte en resina · DM Instagram</div>
+          </div>
+
+          <nav class="navlinks" aria-label="Secciones">
+            <a class="pill" href="#pedidos">Pedí ahora</a>
+            <a class="pill" href="#galeria">Galería</a>
+            <a class="pill" href="#como">Cómo pedir</a>
+            <a class="pill" href="#faq">FAQ</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container">
+          <div class="heroGrid">
+            <div class="heroCard">
+              <div class="hBadgeRow">
+                <span class="badge"><span class="dot"></span> Hecho a mano</span>
+                <span class="badge"><span class="dot v"></span> Personalizado</span>
+                <span class="badge"><span class="dot g"></span> Por encargo</span>
+              </div>
+
+              <h1>Arte en resina.<br/>Personalizado.<br/>Con actitud.</h1>
+
+              <p class="sub">
+                Llaveros, ceniceros, cuadros y adornos. Elegís el estilo, copiás el mensaje y nos escribís por DM.
+                Rápido, claro, sin vueltas.
+              </p>
+
+              <div class="ctaRow">
+                <a class="btn btnPrimary" id="btnMainIG" href="https://www.instagram.com/resi_lencia2026/" target="_blank" rel="noopener">
+                  <span class="igIcon" aria-hidden="true"></span>
+                  Pedir por Instagram (DM)
+                </a>
+                <button class="btn btnGhost" id="btnCopyGeneric" type="button"
+                  <!-- PARTE 2/2 -->
+      <!-- CTA FINAL -->
+      <section>
+        <div class="container">
+          <div class="ctaBand">
+            <div>
+              <h3>¿Para cuándo lo necesitás?</h3>
+              <p>Decime qué querés + colores + zona y te paso opciones. Si es para regalo, también lo armamos con onda.</p>
+            </div>
+            <div class="ctaRow">
+              <button class="btn btnPrimary" id="btnCopySpecial" type="button">
+                <span class="igIcon" aria-hidden="true"></span>
+                Copiar pedido especial
+              </button>
+              <a class="btn btnGhost" href="https://www.instagram.com/resi_lencia2026/" target="_blank" rel="noopener">
+                Abrir Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <div class="container">
+          <div class="sectionHead">
+            <h2 class="h2">FAQ</h2>
+            <p class="hint">Lo típico que se pregunta antes de encargar.</p>
+          </div>
+
+          <div class="faq">
+            <details>
+              <summary>¿Se puede personalizar con nombre o inicial?</summary>
+              <p>Sí. En llaveros y varias piezas podés sumar nombre/inicial, colores y detalles (glitter, estilo, etc.).</p>
+            </details>
+
+            <details>
+              <summary>¿Cuánto tarda?</summary>
+              <p>Depende del pedido y la cantidad. Decime “para cuándo” en el DM y te confirmo tiempos al toque.</p>
+            </details>
+
+            <details>
+              <summary>¿Hacés envíos o entrega?</summary>
+              <p>Sí, se coordina según zona. En el mensaje incluí tu barrio/localidad para cotizar y organizar.</p>
+            </details>
+
+            <details>
+              <summary>¿Puedo pedir algo totalmente a medida?</summary>
+              <p>Obvio. Usá “Pedido especial”: idea, colores, medida aproximada y si es para regalo.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="foot">
+          <div>Instagram: <b>@resi_lencia2026</b> · Pedidos por DM</div>
+          <div>Creado y diseñado por <a href="https://ciborg347.onrender.com" target="_blank" rel="noopener">Ciborg 347</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating IG -->
+    <a class="floatIG" href="https://www.instagram.com/resi_lencia2026/" target="_blank" rel="noopener" aria-label="Abrir Instagram @resi_lencia2026">
+      <span class="igIcon" aria-hidden="true"></span>
+      Pedir por DM
+    </a>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+
+  <script>
+    // Set og:url dynamically (best practice for static hosting too)
+    (function setOgUrl(){
+      try {
+        const url = window.location.href.split("#")[0];
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) ogUrl.setAttribute("content", url);
+      } catch(e){}
+    })();
+
+    const toastEl = document.getElementById("toast");
+    let toastTimer = null;
+
+    function showToast(msg){
+      if (!toastEl) return;
+      toastEl.textContent = msg;
+      toastEl.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toastEl.classList.remove("show"), 2200);
+    }
+
+    async function copyText(text){
+      try {
+        await navigator.clipboard.writeText(text);
+        showToast("Mensaje copiado. Abrí Instagram y pegalo en el DM.");
+        return true;
+      } catch(err){
+        // fallback
+        try {
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.left = "-9999px";
+          ta.style.top = "0";
+          document.body.appendChild(ta);
+          ta.focus();
+          ta.select();
+          const ok = document.execCommand("copy");
+          document.body.removeChild(ta);
+          showToast(ok ? "Mensaje copiado. Abrí Instagram y pegalo en el DM." : "No se pudo copiar. Copialo manualmente.");
+          return ok;
+        } catch(e){
+          showToast("No se pudo copiar. Copialo manualmente.");
+          return false;
+        }
+      }
+    }
+
+    // Generic copy from hero
+    const btnCopyGeneric = document.getElementById("btnCopyGeneric");
+    if (btnCopyGeneric){
+      btnCopyGeneric.addEventListener("click", async () => {
+        const msg =
+`Ey! 👋 Quiero hacer un pedido en resina.
+• Qué querés (llavero / cenicero / cuadro / adorno / especial): __
+• Colores: __
+• Detalles (nombre/inicial/glitter/idea): __
+• Para cuándo lo necesitás: __
+• Zona / envío: __`;
+        await copyText(msg);
+      });
+    }
+
+    // Copy special CTA
+    const btnCopySpecial = document.getElementById("btnCopySpecial");
+    if (btnCopySpecial){
+      btnCopySpecial.addEventListener("click", async () => {
+        const msg =
+`Ey! 👋 Quiero un PEDIDO ESPECIAL en resina.
+• Idea / referencia: __
+• Medida aprox: __
+• Colores: __
+• Detalles (nombre/inicial/glitter/etc.): __
+• Presupuesto aprox (si querés): __
+• Para cuándo lo necesitás: __
+• Zona / envío: __`;
+        await copyText(msg);
+      });
+    }
+
+    // Category copy buttons
+    document.querySelectorAll("[data-copy]").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const msg = btn.getAttribute("data-copy") || "";
+        await copyText(msg);
+      });
+    });
+
+    // Optional: hint after clicking main IG
+    const btnMainIG = document.getElementById("btnMainIG");
+    if (btnMainIG){
+      btnMainIG.addEventListener("click", () => {
+        setTimeout(() => showToast("Tip: si ya copiaste el mensaje, pegalo en el DM."), 400);
+      });
+    }
+  </script>
+</body>
+            </html>
