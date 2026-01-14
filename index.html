@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="es-AR">
 <head>
   <meta charset="UTF-8" />
@@ -11,6 +10,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Resi.Lencia | Arte en resina personalizado" />
   <meta property="og:description" content="Hecho a mano con actitud. Llaveros, ceniceros, cuadros y adornos. Pedidos por DM en Instagram: @resi_lencia2026." />
+  <!-- Uso .jpg (no .md.jpg) para asegurar carga -->
   <meta property="og:image" content="https://iili.io/f8h7tLl.jpg" />
   <meta property="og:url" content="" />
   <meta property="og:type" content="website" />
@@ -27,7 +27,6 @@
 
   <style>
     :root{
-      --bg: #ffffff;
       --text: #0b0f19;
       --muted: #4b5563;
       --line: rgba(11, 15, 25, .12);
@@ -43,7 +42,7 @@
       --btnText: #ffffff;
     }
 
-    * { box-sizing: border-box; }
+    *{ box-sizing: border-box; }
     body{
       margin: 0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -82,7 +81,6 @@
     }
 
     .brand{ display:flex; align-items:center; gap: 12px; user-select:none; }
-
     .brandLogo{
       width: 44px; height: 44px; border-radius: 14px;
       border: 1px solid rgba(11,15,25,.14);
@@ -93,9 +91,7 @@
     }
     .brandLogo img{ width: 100%; height: 100%; object-fit: cover; display:block; }
 
-    .brandText{
-      display:flex; flex-direction: column; line-height: 1.05;
-    }
+    .brandText{ display:flex; flex-direction: column; line-height: 1.05; }
     .brandText .name{
       font-family: "Bebas Neue", sans-serif;
       letter-spacing: .8px;
@@ -121,7 +117,6 @@
     .pill:hover{ transform: translateY(-1px); box-shadow: var(--shadow2); border-color: rgba(11,15,25,.22); }
 
     .hero{ padding: 24px 0 18px; }
-
     .heroGrid{
       display:grid;
       grid-template-columns: 1.25fr .75fr;
@@ -137,7 +132,6 @@
       overflow:hidden;
       position: relative;
     }
-
     .heroCard{ padding: 18px 18px 16px; }
 
     .hBadgeRow{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom: 10px; }
@@ -189,10 +183,7 @@
       box-shadow: 0 18px 40px rgba(11,15,25,.18);
     }
     .btnPrimary:hover{ transform: translateY(-1px); filter: brightness(1.03); }
-    .btnGhost{
-      background: rgba(255,255,255,.86);
-      color: var(--text);
-    }
+    .btnGhost{ background: rgba(255,255,255,.86); color: var(--text); }
     .btnGhost:hover{ transform: translateY(-1px); box-shadow: var(--shadow2); }
 
     .igIcon{
@@ -214,11 +205,7 @@
     }
 
     .heroSide{ padding: 0; }
-    .sideImg{
-      position: relative;
-      min-height: 320px;
-      background: #0b0f19;
-    }
+    .sideImg{ position: relative; min-height: 320px; background: #0b0f19; }
     .sideImg img{
       width: 100%;
       height: 100%;
@@ -246,14 +233,10 @@
       line-height: 1;
       text-shadow: 0 10px 30px rgba(0,0,0,.35);
     }
-    .sideCaption .mini{
-      font-size: 13px; opacity: .92; line-height: 1.4;
-    }
+    .sideCaption .mini{ font-size: 13px; opacity: .92; line-height: 1.4; }
 
     section{ padding: 18px 0; }
-    .sectionHead{
-      display:flex; align-items:flex-end; justify-content: space-between; gap:12px; margin-bottom: 12px;
-    }
+    .sectionHead{ display:flex; align-items:flex-end; justify-content: space-between; gap:12px; margin-bottom: 12px; }
     .h2{
       margin:0;
       font-family:"Bebas Neue", sans-serif;
@@ -263,7 +246,8 @@
     }
     .hint{ margin:0; color: var(--muted); font-weight: 600; font-size: 13px; }
 
-    .cards{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    /* Categorías */
+    .cards{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .card{
       background: rgba(255,255,255,.86);
       border: 1px solid var(--line);
@@ -275,7 +259,7 @@
     }
     .card:hover{ transform: translateY(-2px); border-color: rgba(11,15,25,.22); box-shadow: 0 20px 44px rgba(11,15,25,.14); }
 
-    .cardTop{ position:relative; height: 190px; background:#0b0f19; }
+    .cardTop{ position:relative; height: 175px; background:#0b0f19; }
     .cardTop img{ width:100%; height:100%; object-fit: cover; display:block; filter: contrast(1.08) saturate(1.08); }
     .cardTop::after{
       content:"";
@@ -286,14 +270,14 @@
     }
 
     .cardTitle{
-      position:absolute; left:14px; right:14px; bottom:12px;
+      position:absolute; left:12px; right:12px; bottom:10px;
       display:flex; align-items:center; justify-content: space-between; gap:10px;
       color:#fff;
     }
     .cardTitle b{
       font-family:"Bebas Neue", sans-serif;
       letter-spacing:1px;
-      font-size: 34px;
+      font-size: 30px;
       line-height: 1;
       text-shadow: 0 14px 35px rgba(0,0,0,.35);
     }
@@ -309,7 +293,7 @@
     }
 
     .cardBody{ padding: 12px 14px 14px; display:grid; gap:10px; }
-    .cardBody p{ margin:0; color: var(--muted); font-size: 13.5px; line-height: 1.45; font-weight: 600; }
+    .cardBody p{ margin:0; color: var(--muted); font-size: 13px; line-height: 1.45; font-weight: 600; }
 
     .btnRow{ display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .btnSmall{ padding: 12px 12px; border-radius: 14px; font-size: 13px; }
@@ -445,7 +429,7 @@
       .navlinks{ display:none; }
       .cards{ grid-template-columns: 1fr; }
       .btnRow{ grid-template-columns: 1fr; }
-      .cardTop{ height: 200px; }
+      .cardTop{ height: 210px; }
       .floatIG{ right: 12px; bottom: 12px; }
       body{ padding-bottom: 106px; }
     }
@@ -475,7 +459,7 @@
           </div>
 
           <nav class="navlinks" aria-label="Secciones">
-            <a class="pill" href="#pedidos">Pedí ahora</a>
+            <a class="pill" href="#productos">Productos</a>
             <a class="pill" href="#como">Cómo pedir</a>
             <a class="pill" href="#faq">FAQ</a>
           </nav>
@@ -484,7 +468,7 @@
     </header>
 
     <main>
-      <!-- HERO (con logo grande) -->
+      <!-- HERO -->
       <section class="hero">
         <div class="container">
           <div class="heroGrid">
@@ -495,11 +479,11 @@
                 <span class="badge"><span class="dot g"></span> Por encargo</span>
               </div>
 
-              <h1>Arte en resina.<br/>Personalizado.<br/>Con actitud.</h1>
+              <h1>Resina con onda.<br/>Piezas únicas.<br/>A tu estilo.</h1>
 
               <p class="sub">
-                Llaveros, ceniceros, cuadros y adornos. Elegís el estilo, copiás el mensaje y nos escribís por DM.
-                Rápido, claro, sin vueltas.
+                Llaveros, ceniceros, cuadros y adornos. Elegís colores y detalles, copiás el mensaje y pedís por DM.
+                Claro, rápido y prolijo.
               </p>
 
               <div class="ctaRow">
@@ -513,7 +497,7 @@
               </div>
 
               <p class="hint" style="margin-top:10px;">
-                Tip: copiá el mensaje y pegalo en el DM para que llegue tu pedido clarito.
+                Tip: copiá el mensaje de la categoría y pegalo en Instagram DM.
               </p>
             </div>
 
@@ -527,20 +511,20 @@
                 </div>
               </div>
             </aside>
-
           </div>
         </div>
       </section>
 
-      <!-- CATEGORÍAS -->
-      <section id="pedidos">
+      <!-- PRODUCTOS / CATEGORÍAS -->
+      <section id="productos">
         <div class="container">
           <div class="sectionHead">
-            <h2 class="h2">Elegí tu pedido</h2>
-            <p class="hint">Copiás el mensaje y abrís Instagram para mandarlo.</p>
+            <h2 class="h2">Productos</h2>
+            <p class="hint">Elegí una categoría y copiá el mensaje para pedir.</p>
           </div>
 
           <div class="cards">
+            <!-- LLAVEROS -->
             <article class="card">
               <div class="cardTop">
                 <img src="https://iili.io/f8VPcLx.jpg" alt="Llaveros en resina" loading="lazy" />
@@ -550,7 +534,7 @@
                 </div>
               </div>
               <div class="cardBody">
-                <p>Nombre / inicial, colores y estilo. Ideal para regalo o para vos.</p>
+                <p>Nombre/inicial, colores, glitter o vibe street. Ideal para regalo o para vos.</p>
                 <div class="btnRow">
                   <button class="btn btnSmall btnCopy" type="button"
                     data-copy="Ey! 👋 Quiero un LLAVERO en resina.
@@ -558,15 +542,139 @@
 • Color(es): __
 • Estilo (simple / glitter / con detalle): __
 • Para cuándo lo necesitás: __
-• Zona / envío: __"><!-- INDEX COMPLETO (PARTE 2/2) -->
+• Zona / envío: __">
+                    Copiar mensaje
+                  </button>
+                  <a class="btn btnSmall btnIG" href="https://www.instagram.com/resi_lencia2026/" target="_blank" rel="noopener">
+                    Abrir Instagram
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- CENICEROS -->
+            <article class="card">
+              <div class="cardTop">
+                <img src="https://iili.io/f8VsaKQ.jpg" alt="Ceniceros en resina" loading="lazy" />
+                <div class="cardTitle">
+                  <b>CENICEROS</b>
+                  <span class="chip">A pedido</span>
+                </div>
+              </div>
+              <div class="cardBody">
+                <p>Colores, brillo y detalles. Si querés, lo armamos con tu idea o referencia.</p>
+                <div class="btnRow">
+                  <button class="btn btnSmall btnCopy" type="button"
+                    data-copy="Ey! 👋 Quiero un CENICERO en resina.
+• Color(es): __
+• Forma/tamaño (si tenés preferencia): __
+• Detalle (glitter / inicial / dibujo / onda libre): __
+• Para cuándo lo necesitás: __
+• Zona / envío: __">
+                    Copiar mensaje
+                  </button>
+                  <a class="btn btnSmall btnIG" href="https://www.instagram.com/resi_lencia2026/" target="_blank" rel="noopener">
+                    Abrir Instagram
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- CUADROS -->
+            <article class="card">
+              <div class="cardTop">
+                <img src="https://iili.io/f8Vixja.jpg" alt="Cuadros en resina" loading="lazy" />
+                <div class="cardTitle">
+                  <b>CUADROS</b>
+                  <span class="chip">Deco</span>
+                </div>
+              </div>
+              <div class="cardBody">
+                <p>Cuadros en resina para decorar. Elegí medida, colores y estilo.</p>
+                <div class="btnRow">
+                  <button class="btn btnSmall btnCopy" type="button"
+                    data-copy="Ey! 👋 Quiero un CUADRO en resina.
+• Medida aprox: __
+• Colores: __
+• Estilo / idea: __
+• Para cuándo lo necesitás: __
+• Zona / envío: __">
+                    Copiar mensaje
+                  </button>
+                  <a class="btn btnSmall btnIG" href="https://www.instagram.com/resi_lencia2026/" target="_blank" rel="noopener">
+                    Abrir Instagram
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- ADORNOS -->
+            <article class="card">
+              <div class="cardTop">
+                <img src="https://iili.io/f8Vs7ix.jpg" alt="Adornos en resina" loading="lazy" />
+                <div class="cardTitle">
+                  <b>ADORNOS</b>
+                  <span class="chip">Detalle</span>
+                </div>
+              </div>
+              <div class="cardBody">
+                <p>Adornos y piezas decorativas. Si tenés una idea, la hacemos realidad.</p>
+                <div class="btnRow">
+                  <button class="btn btnSmall btnCopy" type="button"
+                    data-copy="Ey! 👋 Quiero un ADORNO en resina.
+• Qué adorno querés (idea): __
+• Medida aprox: __
+• Colores: __
+• Detalles (glitter / inicial / etc.): __
+• Para cuándo lo necesitás: __
+• Zona / envío: __">
+                    Copiar mensaje
+                  </button>
+                  <a class="btn btnSmall btnIG" href="https://www.instagram.com/resi_lencia2026/" target="_blank" rel="noopener">
+                    Abrir Instagram
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CÓMO PEDIR -->
+      <section id="como">
+        <div class="container">
+          <div class="sectionHead">
+            <h2 class="h2">Cómo pedir</h2>
+            <p class="hint">3 pasos simples, todo por DM.</p>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="stepNum">1</div>
+              <h3>Elegís el producto</h3>
+              <p>Llaveros, ceniceros, cuadros o adornos. Definís colores y detalles.</p>
+            </div>
+            <div class="step">
+              <div class="stepNum">2</div>
+              <h3>Copiás el mensaje</h3>
+              <p>Usá “Copiar mensaje” y pegalo en el DM para que llegue clarito.</p>
+            </div>
+            <div class="step">
+              <div class="stepNum">3</div>
+              <h3>Coordinamos</h3>
+              <p>Te confirmamos precio, tiempos y entrega/envío según tu zona.</p>
+            </div>
+          </div>
+        </div>
+      </section><!-- INDEX COMPLETO (PARTE 2/2) -->
 
       <!-- CTA FINAL -->
       <section>
         <div class="container">
           <div class="ctaBand">
             <div>
-              <h3>¿Para cuándo lo necesitás?</h3>
-              <p>Decime qué querés + colores + zona y te paso opciones. Si es para regalo, también lo armamos con onda.</p>
+              <h3>¿Tenés una idea rara? Mejor.</h3>
+              <p>Mandame tu referencia y lo armamos. Copiá el mensaje y pegalo en el DM con tu idea + colores + para cuándo.</p>
             </div>
             <div class="ctaRow">
               <button class="btn btnPrimary" id="btnCopySpecial" type="button">
@@ -597,7 +705,7 @@
 
             <details>
               <summary>¿Cuánto tarda?</summary>
-              <p>Depende del pedido y la cantidad. Decime “para cuándo” en el DM y te confirmo tiempos al toque.</p>
+              <p>Depende del pedido y la cantidad. Decime “para cuándo” y qué querés en el DM y te confirmo tiempos al toque.</p>
             </details>
 
             <details>
@@ -606,8 +714,8 @@
             </details>
 
             <details>
-              <summary>¿Puedo pedir algo totalmente a medida?</summary>
-              <p>Obvio. Usá “Pedido especial”: idea, colores, medida aproximada y si es para regalo.</p>
+              <summary>¿Qué info te paso para que me coticés rápido?</summary>
+              <p>Producto + colores + detalles (nombre/inicial/idea) + cantidad + zona + para cuándo. Con eso ya te respondo directo.</p>
             </details>
           </div>
         </div>
@@ -688,6 +796,7 @@
 • Qué querés (llavero / cenicero / cuadro / adorno / especial): __
 • Colores: __
 • Detalles (nombre/inicial/glitter/idea): __
+• Cantidad: __
 • Para cuándo lo necesitás: __
 • Zona / envío: __`;
         await copyText(msg);
@@ -704,7 +813,7 @@
 • Medida aprox: __
 • Colores: __
 • Detalles (nombre/inicial/glitter/etc.): __
-• Presupuesto aprox (si querés): __
+• Cantidad: __
 • Para cuándo lo necesitás: __
 • Zona / envío: __`;
         await copyText(msg);
@@ -729,4 +838,3 @@
   </script>
 </body>
 </html>
-               
